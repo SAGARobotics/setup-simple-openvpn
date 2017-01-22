@@ -99,3 +99,9 @@ Modifications by Issac Kim
 - The script now creates a Linux specific version, since not all distros support the Windows method of pushing DNS configs, and also needs script-security 2.
 
 - The config files are labeled with the public IP address, and the Linux specific config is labeled with "linux" at the beginning.
+
+Modificaitons by Marc Hanheide
+==============================
+
+- added script to add more client configs: `sudo ./normal-client-add.sh 80 tcp lcas CLIENTNAME`
+
