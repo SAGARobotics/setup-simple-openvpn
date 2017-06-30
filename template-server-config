@@ -95,7 +95,7 @@ dh easy-rsa/keys/dh1024.pem
 # Each client will be able to reach the server
 # on 10.8.0.1. Comment this line out if you are
 # ethernet bridging. See the man page for more info.
-server 192.168.2.0 255.255.255.0
+server 192.168.122.0 255.255.255.0
 
 # Maintain a record of client <-> virtual IP address
 # associations in this file.  If OpenVPN goes down or
@@ -135,7 +135,7 @@ ifconfig-pool-persist ipp.txt
 # to know to route the OpenVPN client
 # address pool (10.8.0.0/255.255.255.0)
 # back to the OpenVPN server.
-;push "route 192.168.10.0 255.255.255.0"
+push "route 192.168.0.0 255.255.255.0"
 ;push "route 192.168.20.0 255.255.255.0"
 
 # To assign specific IP addresses to specific
@@ -186,7 +186,7 @@ ifconfig-pool-persist ipp.txt
 # (The OpenVPN server machine may need to NAT
 # or bridge the TUN/TAP interface to the internet
 # in order for this to work properly).
-push "redirect-gateway def1 bypass-dhcp"
+;push "redirect-gateway def1 bypass-dhcp"
 
 # Certain Windows-specific network settings
 # can be pushed to clients, such as DNS
@@ -196,8 +196,8 @@ push "redirect-gateway def1 bypass-dhcp"
 # DNS servers provided by opendns.com.
 ;push "dhcp-option DNS 208.67.222.222"
 ;push "dhcp-option DNS 208.67.220.220"
-push "dhcp-option DNS 8.8.4.4"
-push "dhcp-option DNS 8.8.8.8"
+;push "dhcp-option DNS 8.8.4.4"
+;push "dhcp-option DNS 8.8.8.8"
 #8.8.4.4 and 8.8.8.8 are google public dns servers
 
 # Uncomment this directive to allow different
@@ -206,7 +206,7 @@ push "dhcp-option DNS 8.8.8.8"
 # To force clients to only see the server, you
 # will also need to appropriately firewall the
 # server's TUN/TAP interface.
-;client-to-client
+client-to-client
 
 # Uncomment this directive if multiple clients
 # might connect with the same certificate/key
